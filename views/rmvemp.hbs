@@ -42,10 +42,19 @@
                     <td>{{id}}</td>
                     <td>{{name}}</td>
                     <td>{{role}}</td>
-                    <td><form action="/users/delete/{{id}}" method="post" onsubmit="return confirm('are you sure')"><button type="submit">Remove</button></form></td>
+                    <td><form action="/users/delete/{{id}}" method="post"><button type="submit" onclick="reload()" >Remove</button></form></td>
                 </tr>
                 {{/each}}
             </tbody>
         </table>
     </body>
 </html>
+
+<script>
+ function reload() {
+  setTimeout(function() {
+    location.reload();
+  }, 1000);
+}
+
+</script>
