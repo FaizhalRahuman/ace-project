@@ -80,44 +80,20 @@
 			</div>
 		</div>
 		</form>
-		
+
 		<script>
-			fetch('/users/submit')
-			.then(response => response.text())
-			.then(data => console.log(data))
-			.catch(error => console.error('Error:', error));
-			
-			document.getElementById('addempform').addEventListener('submit',async function(event) {
-				event.preventDefault();
+    document.getElementById('addempform').addEventListener('submit', function(event) {
+        // Prevent the default form submission to do some actions
+        event.preventDefault();
+        
+        // Submit the form via an AJAX request or using the default submission
+        this.submit();
 
-				const form = event.target;//refers to element that trigger the event(submit event is triggered by element <form>.so the element <form> is stored in the variable form)
-				console.log(form);
-				const formData = new FormData(form);
-				console.log(formData);
-				try{
-				const response = await fetch(form.action, {
-					method : form.method,//form(<form>).action('/users/submit')
-					body : new URLSearchParams(formData),//convert form data to URL-encoded string||why?->: Your backend expects the data in a specific format (typically URL-encoded or JSON). If the data isn’t formatted correctly, it might not be processed as expected.
-
-				});
-
-				console.log('Response Status:', response.status); // Log the response status
-				const responseBody = await response.text(); // Read the response body as text
-				console.log('Response Body:', responseBody); // Log the response body
-
-				if(response.ok) {
-					alert('Employee added successfully');
-					console.log('Response OK:', response.ok);
-					form.reset();
-					console.log('Form reset');
-				}else{
-					alert('error while adding employee');
-				}
-				}catch(err){
-					console.error('fetch error:',err);
-				}
-
-			});
-		</script> 
+        // Reset the form fields after submission
+        this.reset();
+    });
+</script>
+		
+		
 	</body>
 </html>

@@ -28,10 +28,6 @@ router.post('/submit',async(req, res)=>{
   const{name,id,phone,address,role,salary,exp}=req.body;
 
   try{
-    //validate require field
-    if(!name||!id||!phone||!role){
-      return res.status(400).json({error:"Name, ID, Phone, and Role are required fields"});
-    }
      const newuser = new User({name,id,phone,address,role,salary,exp});
      await newuser.save();
   }catch(err){
