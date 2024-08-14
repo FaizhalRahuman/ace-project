@@ -15,8 +15,8 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 
-router.get('/home', function(req, res){
-  res.render('home');
+router.get('/index', function(req, res){
+  res.render('index');
 });
 
 router.get('/addemp',function(req,res){
