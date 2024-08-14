@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table{
+                border-collapse:collapse;
+            }
+            table,td,th{
+                border:2px solid black;
+            }
+            th,td{
+                padding:10px;
+                text-align:left;
+            }
+            th{
+                background-color: #f2f2f2;
+            }
+        </style>
+
+    </head>
+    <body>
+        <table>
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>NAME</th>
+                <th>PHONE</th>
+                <th>ADDRESS</th>`
+                <th>ROLE</th>
+                <th>SALARY</th>
+                <th>EXPERIENCE</th>
+                </tr>
+
+            </thead>
+            <tbody>
+                {{#each empdetails}}
+                <tr>
+                    <td>{{id}}</td>
+                    <td>{{name}}</td>
+                    <td>{{phone}}</td>
+                    <td>{{address}}</td>
+                    <td>{{role}}</td>
+                    <td>{{salary}}</td>
+                    <td>{{exp}}</td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </body>
+</html>
