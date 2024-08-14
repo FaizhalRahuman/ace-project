@@ -44,11 +44,12 @@ router.get('/rmvemp',async(req,res)=>{
   const empdetails= await User.find();
   res.render('rmvemp',{empdetails});
 });
+
 router.post('/delete/:id',async(req,res)=>{
   const id=req.params.id;
   try{
     await User.findOneAndDelete({id: id});
-    res.redirect('/rmvemp');
+
   }catch(err){
     console.log(err);
     res.send(500).send("error occured while removing employee");
