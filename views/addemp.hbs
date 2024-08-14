@@ -83,13 +83,8 @@
 
 		<script>
     document.getElementById('addempform').addEventListener('submit', function(event) {
-        // Prevent the default form submission to do some actions
         event.preventDefault();
-        
-        // Submit the form via an AJAX request or using the default submission
         this.submit();
-
-        // Reset the form fields after submission
         this.reset();
     });
 </script>
