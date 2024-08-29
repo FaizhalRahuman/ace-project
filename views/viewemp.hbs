@@ -1,22 +1,54 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            table{
-                border-collapse:collapse;
+       <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 20px;
+                background-color: #f2f2f2
             }
-            table,td,th{
-                border:2px solid black;
+
+            table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+                box-shadow: 0 15px 25px rgba(65, 85, 58, 0.508);
+                border-radius: 8px;
+                overflow: hidden;
             }
-            th,td{
-                padding:10px;
-                text-align:left;
+
+            th, td {
+                padding: 12px 15px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
             }
-            th{
+
+            th {
+                background-color: #4CAF50;
+                color: white;
+                text-transform: uppercase;
+                letter-spacing: 0.1em;
+                font-size: 17px;
+            }
+            tr:nth-child(odd) {
+                background-color: #fffefe;
+            }
+            tr:nth-child(even) {
                 background-color: #f2f2f2;
             }
-        </style>
 
+            tr:hover {
+                background-color: #e1f5fe;
+            }
+
+            td {
+                font-size: 16px;
+            }
+
+            thead {
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            }
+        </style>
     </head>
     <body>
         <table>
